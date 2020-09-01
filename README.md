@@ -12,10 +12,10 @@ server running at `10.0.0.10:42563`, make a script called `updateLists`:
 :local lists {
     "spamhaus_drop";
     "spamhaus_edrop";
-    "emerging_threats";
+    "dshield";
     "okean";
     "myip";
-    "dshield";
+    "emerging_threats";
 }
 
 :local rscPath "disk3/tmp.rsc"
@@ -31,8 +31,8 @@ server running at `10.0.0.10:42563`, make a script called `updateLists`:
     :local dlsz [:tonum [/file get [ find where name=$rscPath] value-name=size]];
 
     :if ($dlsz < 100) do={
-        :put    "Download failed. Received $dlsz bytes.";
-        :log    error    "Download failed. Received $dlsz bytes.";
+        :put "Download failed. Received $dlsz bytes.";
+        :log error "Download failed. Received $dlsz bytes.";
     }
 
     /import file-name="$rscPath";

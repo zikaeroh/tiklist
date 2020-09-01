@@ -44,7 +44,7 @@ $log t="Beginning {{.Name}} list update."
 /system logging set numbers=0 topics="info,!firewall"
 
 :do { /ip firewall address-list remove [find where list={{.Name}}] } on-error={}
-:local i do={ /ip firewall address-list add timeout="{{.Timeout}}" list={{.Name}} address="$a" } on-error={}
+:local i do={ :do { /ip firewall address-list add timeout="{{.Timeout}}" list={{.Name}} address="$a" } on-error={} }
 
 {{ range $i, $a := .List }}$i a={{$a}}
 {{ end }}

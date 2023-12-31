@@ -1,8 +1,8 @@
 module github.com/zikaeroh/tiklist
 
-go 1.15
+go 1.21
 
 require (
-	github.com/go-chi/chi/v5 v5.0.1
-	golang.org/x/net v0.0.0-20210226172049-e18ecbb05110
+	github.com/go-chi/chi/v5 v5.0.11
+	golang.org/x/net v0.19.0
 )

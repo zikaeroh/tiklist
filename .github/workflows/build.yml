@@ -33,6 +33,9 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: actions/setup-go@0c52d547c9bc32b1aa3301fd7a9cb496313a4491 # v5.0.0
+        with:
+          go-version: '>=1.21'
+      
       - uses: imjasonh/setup-ko@ace48d793556083a76f1e3e6068850c1f4a369aa # v0.6
 
       - run: |
